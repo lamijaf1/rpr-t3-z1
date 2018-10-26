@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ImenikTest {
 
-    @Test
+  /*  @Test
     void dodaj() {
         Imenik imenik = new Imenik();
         imenik.dodaj("John Smith", new MedunarodniBroj("+1", "23 45-67-89"));
@@ -59,5 +59,5 @@ class ImenikTest {
             result += broj.ispisi() + ",";
         }
         assertEquals("033/123-156,033/123-456,033/123-656,", result);
-    }
+    }*/
 }
