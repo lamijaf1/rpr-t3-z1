@@ -17,7 +17,13 @@ public class Imenik  {
         }
         return broj.ispisi();
     }
+    public String dajIme(TelefonskiBroj broj) {
+        int ime = 0;
+     //   if (contactMap.containsValue(broj)) ime = (String)contactMap.get(broj);
+        return ""+ime;
+    }
 
+    }
     /*public static TelefonskiBroj getKeyFromValue(HashMap hm, TelefonskiBroj value) {
         for (TelefonskiBroj o : hm.keySet()) {
             if (hm.get(o).equals(value)) {
@@ -32,7 +38,6 @@ public class Imenik  {
        return ""+ime;
    }*/
 
-}
 
    // public String naSlovo(char s){}
    // public Set<String> izGrada(FiksniBroj.Grad g){}
