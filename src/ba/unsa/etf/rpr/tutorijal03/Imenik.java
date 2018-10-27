@@ -21,15 +21,30 @@ public class Imenik  {
         return br.ispisi();
     }
     public String dajIme(TelefonskiBroj broj) {
-        String ime = null;
-        if (contactMap.containsValue(broj)) ime = contactMap.get(broj).toString();
-        return ime;
+        String ime = "";
+            return  this.contactMap.get(broj).toString();
     }
 
     public String naSlovo(char s){
-
+        String p = "" + s;
+        String ispisi="";
+        int brojac=0;
+        for(String ime1 :contactMap.keySet()){
+            if ( ime1.startsWith(p) ){
+                brojac+=1;
+                ispisi+=(brojac+". "+ime1+" - "+dajBroj(ime1)+"\n");
+            }
+        }
+        return ispisi;
     }
-   // public Set<String> izGrada(FiksniBroj.Grad g){}
+    public Set<String> izGrada(FiksniBroj.Grad g){
+        Set<String> skup=null;
+        for(String ime1 :contactMap.keySet()){
+            TelefonskiBroj  br = this.contactMap.get(ime1);
+            //if(g==) skup.add(ime1);
+        }
+        return skup;
+    }
     //Set<TelefonskiBroj> izGradaBrojevi(Grad g)
 
 
