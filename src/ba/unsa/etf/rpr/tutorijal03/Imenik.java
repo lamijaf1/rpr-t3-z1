@@ -59,16 +59,7 @@ public class Imenik  {
         return  ts;
     }
 
-   /* @Override
-    public int compareTo(Object obj, Object obj1) {
-        return ((FiksniBroj)obj).getBroj().compareTo(((FiksniBroj)obj1).getBroj());
-    }*/
-    //Set<TelefonskiBroj> izGradaBrojevi(Grad g)
-
-
-    /*public String ispisi(){
-        return "";*/
-    }
+}
 
 
 

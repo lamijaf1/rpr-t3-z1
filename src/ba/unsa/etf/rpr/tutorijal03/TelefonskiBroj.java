@@ -16,14 +16,6 @@ public abstract class TelefonskiBroj implements Comparable{
 
 }
 
- /*public abstract interface Comparable {
-        public int compareTo(TelefonskiBroj o);
-    }*/
-
-//public abstract FiksniBroj.Grad getGrad();
-        /*if (this.getGrad() != o.getGrad()) return -1;
-        return 1;
-    }*/
 
 
 
