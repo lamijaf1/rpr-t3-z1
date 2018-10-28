@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-public class FiksniBroj extends TelefonskiBroj  {
+public class FiksniBroj extends TelefonskiBroj implements Comparable {
     public String getBroj() {
         return broj;
     }
@@ -39,8 +39,13 @@ public class FiksniBroj extends TelefonskiBroj  {
         int br= this.getGrad().getValue();
         return "0"+br+"/"+ this.getBroj();
     }
-  /*  @Override
-    public int compareTo(FiksniBroj br){
-        return getBroj().compareTo(br.getBroj());
-    }*/
+    @Override
+    public int compareTo( Object obj) {
+        return this.getBroj().compareTo(((FiksniBroj)obj).getBroj());
+    }
+    @Override
+    public boolean equals(Object obj) {
+        FiksniBroj broj=(FiksniBroj) obj;
+        return  this.getBroj()==broj.getBroj()&&this.getGrad()==broj.getGrad();
+    }
 }

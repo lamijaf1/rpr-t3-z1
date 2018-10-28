@@ -29,7 +29,7 @@ class ImenikTest {
         assertEquals( "1. Ivo Ivic - 061/321-645", imenik.naSlovo('I').trim());
     }
 
-   /* @Test
+   @Test
     void izGrada() {
         Imenik imenik = new Imenik();
         imenik.dodaj("Ivo Ivic", new FiksniBroj(SARAJEVO, "123-456"));
@@ -59,5 +59,5 @@ class ImenikTest {
             result += broj.ispisi() + ",";
         }
         assertEquals("033/123-156,033/123-456,033/123-656,", result);
-    }*/
+    }
 }

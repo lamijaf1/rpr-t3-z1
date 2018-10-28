@@ -15,11 +15,8 @@ public class MedunarodniBroj extends TelefonskiBroj   {
     public int hashCode() {
         return 0;
     }
-/*@Override
-    public int compareTo(FiksniBroj br){
-        return getBroj().compareTo(br.getBroj());
-    }*/
-
+@Override
+    public int compareTo(Object o){return 0;}
     public String getBroj() {
         return broj;
     }

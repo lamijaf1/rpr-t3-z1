@@ -1,12 +1,12 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
 
 public class Imenik  {
     TelefonskiBroj broj;
     String ime;
     HashMap<String, TelefonskiBroj> contactMap;
+
     public Imenik() {
         this.contactMap=new HashMap<String, TelefonskiBroj>();
     }
@@ -22,7 +22,7 @@ public class Imenik  {
     }
     public String dajIme(TelefonskiBroj broj) {
         String ime = "";
-            return  this.contactMap.get(broj).toString();
+        return  this.contactMap.get(broj).toString();
     }
 
     public String naSlovo(char s){
@@ -37,14 +37,32 @@ public class Imenik  {
         }
         return ispisi;
     }
-    public Set<String> izGrada(FiksniBroj.Grad g){
-        Set<String> skup=null;
-        for(String ime1 :contactMap.keySet()){
-            TelefonskiBroj  br = this.contactMap.get(ime1);
-            //if(g==) skup.add(ime1);
+    public Set<String> izGrada(FiksniBroj.Grad g) {
+        Set<String> skup = new HashSet<String>();
+        for (String ime : this.contactMap.keySet()) {
+            TelefonskiBroj br1 = this.contactMap.get(ime);
+            if(br1 instanceof  FiksniBroj) {
+                FiksniBroj br2 = (FiksniBroj) br1;
+                if (br2.getGrad() == g) skup.add(ime);
+            }
         }
         return skup;
     }
+    public Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g) {
+        Set<TelefonskiBroj> skup = new HashSet<TelefonskiBroj>();
+        for (String ime : this.contactMap.keySet()) {
+            TelefonskiBroj br1 = this.contactMap.get(ime);
+            if (br1 instanceof FiksniBroj) skup.add(br1);
+        }
+        TreeSet<TelefonskiBroj> ts = new TreeSet<TelefonskiBroj>();
+        ts.addAll(skup);
+        return  ts;
+    }
+
+   /* @Override
+    public int compareTo(Object obj, Object obj1) {
+        return ((FiksniBroj)obj).getBroj().compareTo(((FiksniBroj)obj1).getBroj());
+    }*/
     //Set<TelefonskiBroj> izGradaBrojevi(Grad g)
 
 
