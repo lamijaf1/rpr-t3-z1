@@ -12,7 +12,7 @@ public class Program {
     public static Scanner ulaz = new Scanner(System.in);
     public static PrintStream izlaz= System.out;
     private static Imenik imenik=new Imenik();
-        public  static void DodajKontakta(PrintStream izlaz, Scanner ulaz){
+    public  static void DodajKontakta(PrintStream izlaz, Scanner ulaz){
             izlaz.println("Unesite ime kontakta: " );
             String ime=ulaz.nextLine();
             izlaz.println("Pristisnite 1 za unos fiksnog broja, 2 za unos mobilnog ili 3 za medjunarodni broj");
@@ -69,23 +69,33 @@ public class Program {
                 result += ime + ",";
             }
         }
+        public static void izGradaLjudi(){
+            Set<TelefonskiBroj>skup= new TreeSet<TelefonskiBroj>();
+            String imeGrada=ulaz.nextLine();
+            FiksniBroj.Grad grad = FiksniBroj.Grad.valueOf(ulaz.next().toUpperCase());
+            skup=imenik.izGradaBrojevi(grad);
+            String result = "";
+            for (TelefonskiBroj broj: skup) {
+                result += broj.ispisi() + ",";
+            }
+        }
 
 
         public static void main(String[] args) {
             DodajKontakta(izlaz,ulaz);
             boolean x=true;
-            while(x==true){
+            while(x==true) {
                 System.out.println("Odaberite jednu od iducih opcija:");
                 System.out.println("0: Izlaz iz programa\n 1: Dodaj kontakte u mapu \n 2: Daj broj kontakta \n 3: Daj ime kontakta ");
                 System.out.println("4: Sve kontakte na unseno slovo\n 6: Skup kontakata iz grada \n 7: Skup osoba iz grada");
-                int opcija=ulaz.nextInt();
-                ulaz.nextLine();
-                switch(opcija){
+                int opcija = ulaz.nextInt();
+                //ulaz.nextLine();
+                switch (opcija) {
                     case 0:
-                        x=false;
+                        x = false;
                         break;
                     case 1:
-                        DodajKontakta(izlaz,ulaz);
+                        DodajKontakta(izlaz, ulaz);
                         break;
                     case 2:
                         DajKontakta();
@@ -96,17 +106,15 @@ public class Program {
                         KontakteNaSlovo();
                         break;
                     case 5:
-
-
-
-
-
-
+                        izGrada();
+                        break;
+                    case 6:
+                        izGradaLjudi();
+                        break;
                 }
-
-
             }
+        }
     }
 
 
-}
+
