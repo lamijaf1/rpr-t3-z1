@@ -3,6 +3,8 @@ package ba.unsa.etf.rpr.tutorijal03;
 import javax.print.attribute.SetOfIntegerSyntax;
 import java.io.PrintStream;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad.*;
 
@@ -57,6 +59,16 @@ public class Program {
             String naSlovo=imenik.naSlovo(slovo);
             izlaz.print(naSlovo);
         }
+        public static void izGrada(){
+            Set<String>skup= new TreeSet<String>();
+            String imeGrada=ulaz.nextLine();
+            FiksniBroj.Grad grad = FiksniBroj.Grad.valueOf(ulaz.next().toUpperCase());
+            skup=imenik.izGrada(grad);
+            String result = "";
+            for (String ime: skup) {
+                result += ime + ",";
+            }
+        }
 
 
         public static void main(String[] args) {
@@ -81,6 +93,10 @@ public class Program {
                     case 3:
                         break;
                     case 4:
+                        KontakteNaSlovo();
+                        break;
+                    case 5:
+
 
 
 
