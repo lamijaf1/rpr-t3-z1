@@ -1,9 +1,15 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
 public class FiksniBroj extends TelefonskiBroj implements Comparable {
-    public String getBroj() {
-        return broj;
+     public enum Grad {
+        SARAJEVO(33), TUZLA(35), ZENICA(32), POSUSJE(39), BIHAC(37), GORAZDE(38), BUGOJNO(30), ODZAK(31),LIVNO(34),MOSTAR(36);
+        private final int id;
+        Grad(int id) { this.id = id; }
+        public  int getValue() { return id; }
     }
+    private String broj;
+    private Grad grad;
+    public String getBroj() { return broj; }
 
     public void setBroj(String broj) {
         this.broj = broj;
@@ -17,15 +23,7 @@ public class FiksniBroj extends TelefonskiBroj implements Comparable {
         this.grad = grad;
     }
 
-    public enum Grad {
-        SARAJEVO(33), TUZLA(35), ZENICA(32), POSUSJE(39), BIHAC(37), GORAZDE(38), BUGOJNO(30), ODZAK(31),LIVNO(34),MOSTAR(36);
-        private final int id;
-        Grad(int id) { this.id = id; }
-        public  int getValue() { return id; }
 
-    }
-    private String broj;
-    private Grad grad;
     public FiksniBroj(Grad grad, String broj){
         this.setGrad(grad);
         this.setBroj(broj);

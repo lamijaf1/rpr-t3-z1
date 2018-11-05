@@ -5,7 +5,7 @@ import java.util.*;
 public class Imenik  {
     TelefonskiBroj broj;
     String ime;
-    HashMap<String, TelefonskiBroj> contactMap;
+    HashMap<String, TelefonskiBroj> contactMap=new HashMap<String, TelefonskiBroj>();
 
     public Imenik() {
         this.contactMap=new HashMap<String, TelefonskiBroj>();
@@ -38,7 +38,7 @@ public class Imenik  {
         return ispisi;
     }
     public Set<String> izGrada(FiksniBroj.Grad g) {
-        Set<String> skup = new HashSet<String>();
+        Set<String> skup = new TreeSet<String>();
         for (String ime : this.contactMap.keySet()) {
             TelefonskiBroj br1 = this.contactMap.get(ime);
             if(br1 instanceof  FiksniBroj) {
@@ -49,14 +49,12 @@ public class Imenik  {
         return skup;
     }
     public Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g) {
-        Set<TelefonskiBroj> skup = new HashSet<TelefonskiBroj>();
+        Set<TelefonskiBroj> skup =new TreeSet<TelefonskiBroj>();
         for (String ime : this.contactMap.keySet()) {
             TelefonskiBroj br1 = this.contactMap.get(ime);
             if (br1 instanceof FiksniBroj) skup.add(br1);
         }
-        TreeSet<TelefonskiBroj> ts = new TreeSet<TelefonskiBroj>();
-        ts.addAll(skup);
-        return  ts;
+        return skup;
     }
 
 }
