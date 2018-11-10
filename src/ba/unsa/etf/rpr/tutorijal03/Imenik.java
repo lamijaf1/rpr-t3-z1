@@ -5,10 +5,10 @@ import java.util.*;
 public class Imenik  {
    // TelefonskiBroj broj;
     //String ime;
-    HashMap<String, TelefonskiBroj> contactMap=new HashMap<String, TelefonskiBroj>();
+    HashMap<String, TelefonskiBroj> contactMap=new HashMap<>();
 
     public Imenik() {
-        this.contactMap=new HashMap<String, TelefonskiBroj>();
+        this.contactMap=new HashMap<>();
     }
     public void dodaj(String ime, TelefonskiBroj broj){
         this.contactMap.put(ime, broj);

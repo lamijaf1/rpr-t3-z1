@@ -1,12 +1,11 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-import javax.print.attribute.SetOfIntegerSyntax;
+
 import java.io.PrintStream;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 
-import static ba.unsa.etf.rpr.tutorijal03.FiksniBroj.Grad.*;
 
 public class Program {
     public static Scanner ulaz = new Scanner(System.in);
