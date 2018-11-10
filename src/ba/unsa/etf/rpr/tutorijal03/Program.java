@@ -47,8 +47,10 @@ public class Program {
     }
 
     public static void DajKontakta() {
+        ulaz.nextLine();
         izlaz.println("Unesite ime kontakta kojeg zelite: ");
         String ime = ulaz.nextLine();
+        //URADITI DIO KADA NEMA TOG KONTAKTA KOJEG TRAZIMO
         String broj = imenik.dajBroj(ime);
         izlaz.println(broj);
     }
@@ -85,7 +87,7 @@ public class Program {
     public static void main(String[] args) {
             DodajKontakta(izlaz,ulaz);
             boolean x=true;
-            while(x==true) {
+            while(x) {
                 System.out.println("Odaberite jednu od iducih opcija:");
                 System.out.println("0: Izlaz iz programa\n1: Dodaj kontakte u mapu \n2: Daj broj kontakta \n3: Daj ime kontakta ");
                 System.out.println("4: Sve kontakte na unseno slovo\n6: Skup kontakata iz grada \n7: Skup osoba iz grada");
