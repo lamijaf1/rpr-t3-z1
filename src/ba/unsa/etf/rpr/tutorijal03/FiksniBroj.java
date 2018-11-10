@@ -44,6 +44,6 @@ public class FiksniBroj extends TelefonskiBroj implements Comparable {
     @Override
     public boolean equals(Object obj) {
         FiksniBroj broj=(FiksniBroj) obj;
-        return  this.getBroj()==broj.getBroj()&&this.getGrad()==broj.getGrad();
+        return  this.getBroj().equals(broj.getBroj())&&this.getGrad()==broj.getGrad();
     }
 }

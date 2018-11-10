@@ -3,8 +3,8 @@ package ba.unsa.etf.rpr.tutorijal03;
 import java.util.*;
 
 public class Imenik  {
-    TelefonskiBroj broj;
-    String ime;
+   // TelefonskiBroj broj;
+    //String ime;
     HashMap<String, TelefonskiBroj> contactMap=new HashMap<String, TelefonskiBroj>();
 
     public Imenik() {
